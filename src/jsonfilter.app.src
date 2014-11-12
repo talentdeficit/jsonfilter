@@ -1,0 +1,13 @@
+{application, jsonfilter,
+[
+    {description, "an otp approach to working with streaming json"},
+    {vsn, "0.1.0"},
+    {modules, [jsonfilter]},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib,
+        jsx
+    ]},
+    {env, []}
+]}.
