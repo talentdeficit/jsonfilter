@@ -21,7 +21,7 @@
 %% THE SOFTWARE.
 
 
--module(jsonfilter_tests).
+-module(books_tests).
 -include_lib("eunit/include/eunit.hrl").
 
 -export([init/1, handle_value/3, finish/1]).
@@ -64,33 +64,33 @@ books_test_() ->
   [
     {"json books test", ?_assertEqual(
       lists:sort([
-        {[<<"books">>, 0, <<"title">>], {string, <<"a wrinkle in time">>}},
-        {[<<"books">>, 0, <<"author">>], {string, <<"madeleine l'engel">>}},
-        {[<<"books">>, 0, <<"editions">>, 0], {integer, 1962}},
-        {[<<"books">>, 0, <<"editions">>, 1], {integer, 1978}},
-        {[<<"books">>, 0, <<"editions">>, 2], {integer, 2007}},
-        {[<<"books">>, 1, <<"title">>], {string, <<"all creatures great and small">>}},
-        {[<<"books">>, 1, <<"author">>], {string, <<"james herriot">>}},
-        {[<<"books">>, 1, <<"editions">>, 0], {integer, 1972}},
-        {[<<"books">>, 1, <<"editions">>, 1], {integer, 1992}},
-        {[<<"books">>, 1, <<"editions">>, 2], {integer, 2004}},
-        {[<<"books">>, 1, <<"editions">>, 3], {integer, 2014}}
+        {[<<"books">>, 0, <<"title">>], <<"a wrinkle in time">>},
+        {[<<"books">>, 0, <<"author">>], <<"madeleine l'engel">>},
+        {[<<"books">>, 0, <<"editions">>, 0], 1962},
+        {[<<"books">>, 0, <<"editions">>, 1], 1978},
+        {[<<"books">>, 0, <<"editions">>, 2], 2007},
+        {[<<"books">>, 1, <<"title">>], <<"all creatures great and small">>},
+        {[<<"books">>, 1, <<"author">>], <<"james herriot">>},
+        {[<<"books">>, 1, <<"editions">>, 0], 1972},
+        {[<<"books">>, 1, <<"editions">>, 1], 1992},
+        {[<<"books">>, 1, <<"editions">>, 2], 2004},
+        {[<<"books">>, 1, <<"editions">>, 3], 2014}
       ]),
       lists:sort(jsonfilter:filter(json(), ?MODULE, []))
     )},
     {"term books test", ?_assertEqual(
       lists:sort([
-        {[<<"books">>, 0, <<"title">>], {string, <<"a wrinkle in time">>}},
-        {[<<"books">>, 0, <<"author">>], {string, <<"madeleine l'engel">>}},
-        {[<<"books">>, 0, <<"editions">>, 0], {integer, 1962}},
-        {[<<"books">>, 0, <<"editions">>, 1], {integer, 1978}},
-        {[<<"books">>, 0, <<"editions">>, 2], {integer, 2007}},
-        {[<<"books">>, 1, <<"title">>], {string, <<"all creatures great and small">>}},
-        {[<<"books">>, 1, <<"author">>], {string, <<"james herriot">>}},
-        {[<<"books">>, 1, <<"editions">>, 0], {integer, 1972}},
-        {[<<"books">>, 1, <<"editions">>, 1], {integer, 1992}},
-        {[<<"books">>, 1, <<"editions">>, 2], {integer, 2004}},
-        {[<<"books">>, 1, <<"editions">>, 3], {integer, 2014}}
+        {[<<"books">>, 0, <<"title">>], <<"a wrinkle in time">>},
+        {[<<"books">>, 0, <<"author">>], <<"madeleine l'engel">>},
+        {[<<"books">>, 0, <<"editions">>, 0], 1962},
+        {[<<"books">>, 0, <<"editions">>, 1], 1978},
+        {[<<"books">>, 0, <<"editions">>, 2], 2007},
+        {[<<"books">>, 1, <<"title">>], <<"all creatures great and small">>},
+        {[<<"books">>, 1, <<"author">>], <<"james herriot">>},
+        {[<<"books">>, 1, <<"editions">>, 0], 1972},
+        {[<<"books">>, 1, <<"editions">>, 1], 1992},
+        {[<<"books">>, 1, <<"editions">>, 2], 2004},
+        {[<<"books">>, 1, <<"editions">>, 3], 2014}
       ]),
       lists:sort(jsonfilter:filter(term(), ?MODULE, []))
     )}

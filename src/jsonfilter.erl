@@ -50,7 +50,7 @@ handle_event(end_array, {[_|Path], Module, State}) ->
   {advance(Path), Module, State};
 handle_event({key, Key}, {[key|Path], Module, State}) ->
   {[Key] ++ Path, Module, State};
-handle_event(Value, {Path, Module, State}) ->
+handle_event({_, Value}, {Path, Module, State}) ->
   NewState = Module:handle_value(lists:reverse(Path), Value, State),
   {advance(Path), Module, NewState}.
 
