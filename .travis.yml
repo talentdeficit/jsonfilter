@@ -1,5 +1,6 @@
 language: erlang
-script: rebar compile && rebar skip_deps=true eunit
+script: ./mix local.hex --force && ./mix deps.get && ./mix eunit
 otp_release:
+  - 17.3
   - 17.1
   - 17.0

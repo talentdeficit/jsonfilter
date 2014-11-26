@@ -3,9 +3,9 @@ jsonfilter (v0.1.0)
 
 an otp approach to working with streaming json
 
-**jsonfilter** is built via [rebar][rebar], and continuous integration testing provided by [travis-ci][travis]
+**jsonfilter** is built via [mix][mix], and continuous integration testing provided by [travis-ci][travis]
 
-current status: [![Build Status](https://travis-ci.org/talentdeficit/jsonfilter.svg?branch=master)](https://travis-ci.org/talentdeficit/jsonfilter)
+current status: [![Build Status](https://travis-ci.org/talentdeficit/jsonfilter.svg?branch=mix)](https://travis-ci.org/talentdeficit/jsonfilter)
 
 **jsonfilter** is released under the terms of the [MIT][MIT] license
 
@@ -16,9 +16,9 @@ copyright 2014 alisdair sullivan
 #### to build library and run tests  ####
 
 ```bash
-$ rebar get-deps
-$ rebar compile
-$ rebar eunit
+$ mix get.deps
+$ mix compile
+$ mix eunit
 ```
 
 #### filtering a json stream ####
@@ -63,6 +63,6 @@ finish(State) -> lists:reverse(State).
 ```
 
 
-[rebar]: https://github.com/rebar/rebar
+[mix]: https://hex.pm
 [travis]: https://travis-ci.org
 [MIT]: http://www.opensource.org/licenses/mit-license.html
