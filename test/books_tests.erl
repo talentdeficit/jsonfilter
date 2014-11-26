@@ -36,12 +36,12 @@ finish(State) -> lists:reverse(State).
 
 json() ->
   <<"{ \"books\": [
-    { \"title\": \"a wrinkle in time\",
-      \"author\": \"madeleine l'engel\",
+    { \"title\":    \"a wrinkle in time\",
+      \"author\":   \"madeleine l'engel\",
       \"editions\": [1962, 1978, 2007]
     },
-    { \"title\": \"all creatures great and small\",
-      \"author\": \"james herriot\",
+    { \"title\":    \"all creatures great and small\",
+      \"author\":   \"james herriot\",
       \"editions\": [1972, 1992, 2004, 2014]
     }
   ]}">>.
@@ -64,13 +64,13 @@ books_test_() ->
   [
     {"json books test", ?_assertEqual(
       lists:sort([
-        {[<<"books">>, 0, <<"title">>], <<"a wrinkle in time">>},
-        {[<<"books">>, 0, <<"author">>], <<"madeleine l'engel">>},
+        {[<<"books">>, 0, <<"title">>],       <<"a wrinkle in time">>},
+        {[<<"books">>, 0, <<"author">>],      <<"madeleine l'engel">>},
         {[<<"books">>, 0, <<"editions">>, 0], 1962},
         {[<<"books">>, 0, <<"editions">>, 1], 1978},
         {[<<"books">>, 0, <<"editions">>, 2], 2007},
-        {[<<"books">>, 1, <<"title">>], <<"all creatures great and small">>},
-        {[<<"books">>, 1, <<"author">>], <<"james herriot">>},
+        {[<<"books">>, 1, <<"title">>],       <<"all creatures great and small">>},
+        {[<<"books">>, 1, <<"author">>],      <<"james herriot">>},
         {[<<"books">>, 1, <<"editions">>, 0], 1972},
         {[<<"books">>, 1, <<"editions">>, 1], 1992},
         {[<<"books">>, 1, <<"editions">>, 2], 2004},
@@ -80,13 +80,13 @@ books_test_() ->
     )},
     {"term books test", ?_assertEqual(
       lists:sort([
-        {[<<"books">>, 0, <<"title">>], <<"a wrinkle in time">>},
-        {[<<"books">>, 0, <<"author">>], <<"madeleine l'engel">>},
+        {[<<"books">>, 0, <<"title">>],       <<"a wrinkle in time">>},
+        {[<<"books">>, 0, <<"author">>],      <<"madeleine l'engel">>},
         {[<<"books">>, 0, <<"editions">>, 0], 1962},
         {[<<"books">>, 0, <<"editions">>, 1], 1978},
         {[<<"books">>, 0, <<"editions">>, 2], 2007},
-        {[<<"books">>, 1, <<"title">>], <<"all creatures great and small">>},
-        {[<<"books">>, 1, <<"author">>], <<"james herriot">>},
+        {[<<"books">>, 1, <<"title">>],       <<"all creatures great and small">>},
+        {[<<"books">>, 1, <<"author">>],      <<"james herriot">>},
         {[<<"books">>, 1, <<"editions">>, 0], 1972},
         {[<<"books">>, 1, <<"editions">>, 1], 1992},
         {[<<"books">>, 1, <<"editions">>, 2], 2004},
