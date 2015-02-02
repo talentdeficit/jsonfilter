@@ -23,16 +23,19 @@
 
 -module(jsonfilter).
 
--export([filter/3]).
+-export([filter/3, filter/4]).
 -export([init/1, handle_event/2]).
 
 
 filter(JSON, Module, InitialState) ->
+    ?MODULE:filter(JSON, Module, InitialState, []).
+
+filter(JSON, Module, InitialState, CoderOpts) ->
   case JSON of
     JSON when is_binary(JSON) ->
-      (jsx:decoder(?MODULE, {Module, InitialState}, []))(JSON);
+      (jsx:decoder(?MODULE, {Module, InitialState}, CoderOpts))(JSON);
     JSON when is_list(JSON); is_map(JSON) ->
-      (jsx:encoder(?MODULE, {Module, InitialState}, []))(JSON)
+      (jsx:encoder(?MODULE, {Module, InitialState}, CoderOpts))(JSON)
   end.
 
 
